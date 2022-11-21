@@ -1,14 +1,21 @@
 ﻿Console.WriteLine("Enter number -->");
 int number = Convert.ToInt32(Console.ReadLine());
 
-int ThreeDigit(int num)
+int ThirdDigit(int num)
 {
-    int theFirstAction = num / 100;
-    int secondAction = theFirstAction % 10;
-    int result = secondAction;
-    return result;
+    while (num > 999)
+    {
+        num = num / 10;
+    }
+    return num % 10;
 }
-int threeDigit = ThreeDigit(number);
-
-if (number < 100) Console.WriteLine("There is no third digit");
-else Console.WriteLine($"The second digit of the number --> {threeDigit}");
+if (number < 0) number= -number;
+if (number >99 )
+{
+    int result = ThirdDigit(number);
+    Console.WriteLine(result);
+}
+else
+{
+    Console.WriteLine("No Third Digit");
+}
